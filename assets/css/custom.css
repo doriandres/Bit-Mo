@@ -1,0 +1,26 @@
+body{
+  color: purple;
+  background-color: white;
+}    
+
+input[type='button']{
+  color : blue;
+  border: 2px solid white;
+  border-radius: 20px;
+}
+input[type = 'button' value = 'DEC'] 
+{
+  color : black;
+  border: 2px solid white;
+  border-radius: 20px;
+
+}
+
+#Dec {
+  color:#ff0000;
+  background-color: blue;
+}
+
+ul{
+  padding-left: 0;
+}

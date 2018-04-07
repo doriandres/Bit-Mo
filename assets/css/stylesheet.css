@@ -2,16 +2,26 @@
 <head>
   <meta charset="utf-8">
   <title>Bit-Mo</title>
-  <link rel="stylesheet" href="assets/css/custom.css">
+  <style type="text/css">
+  body {
+    color: purple;
+    background-color: #d8da3d }
+  </style>
+  <link href="assets/css/custom.css">
   <script src="assets/js/bit-mo.js"></script> 
 </head>
 <body>
 <h1>Calculadora Bit-Mo</h1>
+<style type="text/css">
+  body {
+    color: purple;
+    background-color: #d8da3d }
+  </style>
 <h2> 
-<input type='text' name='operaciones'>
+<input style="color:purple;" type='text' name='operaciones'>
 <div>
 	<ul>
-<input type = 'button' value = 'DEC' id="Dec"> 
+<input type = 'button' value = 'DEC'> 
 <input type = 'button' value = 'OCT'> 
 <input type = 'button' value = 'HEX'> 
     </ul>
