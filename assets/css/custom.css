@@ -2,7 +2,9 @@ body{
   color: purple;
   background-color: white;
 }    
-
+input#screen{
+  text-align: right;
+}
 input[type='button']{
   color : blue;
   border: 2px solid white;
