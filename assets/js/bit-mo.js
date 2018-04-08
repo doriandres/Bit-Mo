@@ -2,12 +2,20 @@
 var getElm = function(id){
 	return document.getElementById(id);
 };
+var screen = getElm("screen");
+var oneBtn = getElm("oneBtn");
+var zeroBtn = getElm("zeroBtn");
+var plusBtn = getElm("plusBtn");
+var lessBtn = getElm("lessBtn");
+var divideBtn = getElm("divideBtn");
+var multiplyBtn = getElm("multiplyBtn");
+var deleteBtn = getElm("deleteBtn");
+var cleanBtn = getElm("acBtn")
 
 var addClick = function(elm, fn){
 	elm.addEventListener("click", fn);
 };
 
-var screen = getElm("screen");
 var addOneToScreen = function(){
 	screen.value += "1";
 }
@@ -26,21 +34,20 @@ var addDivideToScreen = function(){
 var addMultiplyToScreen = function(){
 	screen.value += "*";
 }
+var deleteFromScreen = function(){
+	screen.value = screen.value.replace(/.$/,'');
+}
+var cleanScreen = function(){
+	screen.value = '';
+}
 
-
-var initBtnEvents = (function(){
-	var oneBtn = getElm("oneBtn");
-	var zeroBtn = getElm("zeroBtn");
-	var plusBtn = getElm("plusBtn");
-	var lessBtn = getElm("lessBtn");
-	var divideBtn = getElm("divideBtn");
-	var multiplyBtn = getElm("multiplyBtn");
-
-
+var initBtnEvents = (function(){	
 	addClick(oneBtn, addOneToScreen);
 	addClick(zeroBtn, addZeroToScreen);
 	addClick(plusBtn, addPlusToScreen);
 	addClick(lessBtn, addLessToScreen);
 	addClick(divideBtn, addDivideToScreen);
 	addClick(multiplyBtn, addMultiplyToScreen);
+	addClick(deleteBtn, deleteFromScreen);
+	addClick(cleanBtn, cleanScreen);
 })();
