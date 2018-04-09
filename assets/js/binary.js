@@ -13,7 +13,7 @@ var Binary  = function(num){
     if(val && !isNaN(val)){ // isNaN checks if val is not a number
         for(var i = 0 ; i < val.length; i++){ // If the val is a number we still have to check if it is binary
           var currentNumber = val[i];
-          if(currentNumber != 1 || currentNumber != 0){ // If val contains a number different from 1 or 0 nothing is gonna happen
+          if(!(currentNumber === '1' || currentNumber === '0' || currentNumber === '-')){ // If val contains a number different from 1 or 0 nothing is gonna happen
             return false;
           }
         }
