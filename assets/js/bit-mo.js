@@ -104,7 +104,12 @@ var cleanScreen = function(){
 };
 
 var isValidExpression = function(){
-	return !!(screen.value && !isNaN( getScreenLastChar()) );
+	if(!!(screen.value && !isNaN( getScreenLastChar()))){
+		if(!isNaN(screen.value[0])){
+			return true;
+		}
+	}
+	return false;
 }
 
 var removeEvents = function(){
@@ -148,7 +153,9 @@ var getResult = function(){
 	if (isValidExpression()){		
 		var binaryExpressions = screen.value.split(/[\+\-\*\/]/);
 		var operations = screen.value.split(/[01]+/);
-		operations.shift();
+		if(!operations[0]){
+			operations.shift();
+		}		
 		operations.pop();
 		if(operations && operations.length){
 			screen.value = performCalculation(binaryExpressions, operations);	
