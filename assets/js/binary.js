@@ -73,7 +73,11 @@ var Binary  = function(num){
     Returns the Binary object
   */
   this.divide = function(bNum){
-    number /= bNum.toDecimal();
+  	if(bNum.toDecimal() !== 0){
+  		number /= bNum.toDecimal();
+  	}else{
+  		number = 0;
+  	}
     return this;
   }
 
