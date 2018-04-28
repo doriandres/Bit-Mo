@@ -149,6 +149,11 @@ var performCalculation = function(binaries, operations){
 	return binary.val();
 };
 
+var throwError = function(){	
+   screen.value = "ERROR";
+   removeEvents();
+};
+
 var getResult = function(){
 	if (isValidExpression()){		
 		var binaryExpressions = screen.value.split(/[\+\-\*\/]/);
@@ -158,13 +163,17 @@ var getResult = function(){
 		}		
 		operations.pop();
 		if(operations && operations.length){
-			screen.value = performCalculation(binaryExpressions, operations);	
+			var res = performCalculation(binaryExpressions, operations);	 
+			if(res && !isNaN(res)){
+			    screen.value = res;
+			}else{
+			    throwError();
+			}			 
 		}else{
 			screen.value = binaryExpressions[0];
 		}		
 	}else{
-		screen.value = "ERROR";
-		removeEvents();
+	    throwError();
 	}
 };
 
